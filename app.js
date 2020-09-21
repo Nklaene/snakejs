@@ -91,6 +91,10 @@ class Snake {
         return this.direction;
     }
 
+    setDirection(direction) {
+        this.direction = direction;
+    }
+
     checkIfDead() {
         if (children[this.headLocation].classList.contains('death')) {
             document.body.innerHTML = '<div>Game Over</div>';
@@ -102,6 +106,23 @@ class Snake {
 let player = new Snake();
 
 setInterval(() => {
-    // player.move(player.getDirection());
-    player.move('down')
-}, 200);
+    player.move(player.getDirection());
+}, 100);
+
+window.addEventListener('keydown', e => {
+    const key = e.key;
+    switch (key) {
+        case "ArrowLeft":
+            player.setDirection('left')
+            break;
+        case "ArrowRight":
+            player.setDirection('right');
+            break;
+        case "ArrowUp":
+            player.setDirection('up');
+            break;
+        case "ArrowDown":
+            player.setDirection('down');
+            break;
+    }
+});
