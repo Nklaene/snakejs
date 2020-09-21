@@ -1,0 +1,31 @@
+html {
+    height: 90%;
+}
+
+body {
+    height: 90%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: repeat(21, 1fr);
+    grid-template-columns: repeat(21, 1fr);
+    width: 35%;
+    height: 70%;
+    margin: 10rem auto;
+    background-color: #333;
+}
+
+.grid-tile {
+    border: 1.5px solid #555;
+}
+
+.death {
+    background-color: crimson;
+}
+
+.head {
+    background-color: #fff;
+}
